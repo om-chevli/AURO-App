@@ -54,17 +54,19 @@ class LandingPage extends StatelessWidget {
                 bottom: deviceHeight / 2,
               ),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(300),
+                  borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3),
+                      offset: Offset(3, 3),
                     ),
                   ]),
               child: Image(
                 image: AssetImage('assets/images/auro_logo.png'),
+                height: 100,
+                width: 240,
               ),
             ),
           ),
@@ -76,13 +78,12 @@ class LandingPage extends StatelessWidget {
               ),
               padding: EdgeInsets.all(5),
               child: Text(
-                'BUILT WITH LOVE BY SCHOOL OF I.T',
+                'MADE WITH LOVE BY SCHOOL OF I.T',
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
-                  fontSize: 13,
-                  backgroundColor: Colors.grey.withOpacity(0.1),
+                  fontSize: 15,
                 ),
               ),
             ),
@@ -99,12 +100,68 @@ class LandingPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     //Log in
-                    Container(
-                      child: Text('LOG IN'),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            style: BorderStyle.solid,
+                            width: 3,
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        margin: EdgeInsets.only(
+                          bottom: 25,
+                          left: 20,
+                          right: 10,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: deviceWidth - (deviceWidth * 90 / 100),
+                          vertical: 15,
+                        ),
+                        child: Text(
+                          'LOG IN',
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
                     ),
                     //Register
-                    Container(
-                      child: Text('REGISTER'),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        margin: EdgeInsets.only(
+                          bottom: 25,
+                          left: 10,
+                          right: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            style: BorderStyle.solid,
+                            width: 3,
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                          color: Colors.black,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: deviceWidth - (deviceWidth * 90 / 100),
+                          vertical: 15,
+                        ),
+                        child: Text(
+                          'REGISTER',
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
