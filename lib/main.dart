@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import './screens/registration_success.dart';
 import './screens/landing_page.dart';
 import './screens/login_page.dart';
 import './screens/registration_page.dart';
@@ -41,8 +42,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => RegistrationPage(),
-        '/loginPage': (context) => LoginPage(),
+        '/': (context) => LoginPage(),
+        // '/loginPage': (context) => LoginPage(),
         // '/registrationPage': (context) => (),
       },
     );

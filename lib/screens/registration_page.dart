@@ -4,7 +4,7 @@ import '../widgets/form_fields.dart';
 class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.of(context).size.height;
+    // final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: null,
@@ -82,17 +82,20 @@ class RegistrationPage extends StatelessWidget {
                             fontWeight: FontWeight.w800,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
                 FlatButton(
                   onPressed: null,
-                  child: Text('Forgot Password?',style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 15,
-                    color: Colors.black,
-                  ),),
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ],
             ),
