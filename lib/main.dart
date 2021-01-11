@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LandingPage(),
+        '/': (context) => RegistrationPage(),
         '/loginPage': (context) => LoginPage(),
-        '/registrationPage': (context) => RegistrationPage(),
+        // '/registrationPage': (context) => (),
       },
     );
   }
