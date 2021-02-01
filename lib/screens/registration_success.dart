@@ -23,6 +23,7 @@ class RegistrationSuccess extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'Congratulations!',
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 30,

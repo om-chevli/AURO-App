@@ -1,11 +1,21 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
+  @override
+  _LandingPageState createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
+    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
     final deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: null,
@@ -102,30 +112,36 @@ class LandingPage extends StatelessWidget {
                     //Log in
                     Expanded(
                       flex: 2,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            style: BorderStyle.solid,
-                            width: 3,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(
+                              context, '/login-page');
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                              style: BorderStyle.solid,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(6),
                           ),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        margin: EdgeInsets.only(
-                          bottom: 25,
-                          left: 20,
-                          right: 10,
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: deviceWidth - (deviceWidth * 90 / 100),
-                          vertical: 15,
-                        ),
-                        child: Text(
-                          'LOG IN',
-                          softWrap: true,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
+                          margin: EdgeInsets.only(
+                            bottom: 25,
+                            left: 20,
+                            right: 10,
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: deviceWidth - (deviceWidth * 90 / 100),
+                            vertical: 15,
+                          ),
+                          child: Text(
+                            'LOG IN',
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ),
                       ),
@@ -133,32 +149,38 @@ class LandingPage extends StatelessWidget {
                     //Register
                     Expanded(
                       flex: 2,
-                      child: Container(
-                        margin: EdgeInsets.only(
-                          bottom: 25,
-                          left: 10,
-                          right: 20,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            style: BorderStyle.solid,
-                            width: 3,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.popAndPushNamed(
+                              context, '/registration-page');
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            bottom: 25,
+                            left: 10,
+                            right: 20,
                           ),
-                          borderRadius: BorderRadius.circular(6),
-                          color: Colors.black,
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: deviceWidth - (deviceWidth * 90 / 100),
-                          vertical: 15,
-                        ),
-                        child: Text(
-                          'REGISTER',
-                          softWrap: true,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w800,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                              style: BorderStyle.solid,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(6),
+                            color: Colors.black,
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: deviceWidth - (deviceWidth * 90 / 100),
+                            vertical: 15,
+                          ),
+                          child: Text(
+                            'REGISTER',
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ),
                       ),

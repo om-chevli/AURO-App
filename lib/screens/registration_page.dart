@@ -16,9 +16,18 @@ class RegistrationPage extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.topLeft,
-                  child: Icon(Icons.arrow_back),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back,
+                    ),
+                    alignment: Alignment.topLeft,
+                    padding: EdgeInsets.all(0),
+                    onPressed: (){
+                      Navigator.popAndPushNamed(context, '/');
+                    },
+                  ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 30),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(

@@ -16,9 +16,18 @@ class LoginPage extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.topLeft,
-                  child: Icon(Icons.arrow_back),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back,
+                    ),
+                    alignment: Alignment.topLeft,
+                    padding: EdgeInsets.all(0),
+                    onPressed: () {
+                      Navigator.popAndPushNamed(context, '/');
+                    },
+                  ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 30),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
@@ -46,28 +55,34 @@ class LoginPage extends StatelessWidget {
                         textController: null,
                         validate: null,
                       ),
-                      Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.popAndPushNamed(
+                              context, '/tabs-screen');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                              style: BorderStyle.solid,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(6),
                             color: Colors.black,
-                            style: BorderStyle.solid,
-                            width: 3,
                           ),
-                          borderRadius: BorderRadius.circular(6),
-                          color: Colors.black,
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: deviceWidth - (deviceWidth * 90 / 100),
-                          vertical: 16,
-                        ),
-                        child: Text(
-                          'LOG IN',
-                          softWrap: true,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w800,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: deviceWidth - (deviceWidth * 90 / 100),
+                            vertical: 16,
+                          ),
+                          child: Text(
+                            'LOG IN',
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ),
                       ),

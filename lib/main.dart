@@ -1,31 +1,38 @@
 import 'dart:io';
+import 'package:auro_app/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import './screens/registration_success.dart';
 import './screens/landing_page.dart';
+import 'package:auro_app/screens/loading_page.dart';
 import './screens/login_page.dart';
 import './screens/registration_page.dart';
+import './screens/registration_success.dart';
+import 'package:auro_app/screens/news_stories_page.dart';
+import 'package:auro_app/screens/Mental Test/first_mental_question_.dart';
+import 'package:auro_app/screens/Mental Test/second_mental_question_.dart';
+import 'package:auro_app/screens/Mental Test/third_mental_question_.dart';
+import 'package:auro_app/screens/Mental Test/final_mental_article.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final FirebaseApp app = await Firebase.initializeApp(
-    name: 'db2',
-    options: Platform.isIOS || Platform.isMacOS
-        ? FirebaseOptions(
-            appId: '1:297855924061:ios:c6de2b69b03a5be8',
-            apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
-            projectId: 'flutter-firebase-plugins',
-            messagingSenderId: '297855924061',
-            databaseURL: 'https://flutterfire-cd2f7.firebaseio.com',
-          )
-        : FirebaseOptions(
-            appId: '1:957750199314:android:57dce63b233fe7463e44cb',
-            apiKey: 'AIzaSyAECA03oanodBO9gB3ZhKCk8b-bznl4nGw',
-            messagingSenderId: '957750199314',
-            projectId: 'taxiapp-d258c',
-            databaseURL: 'https://taxiapp-d258c-default-rtdb.firebaseio.com/',
-          ),
-  );
+  // final FirebaseApp app = await Firebase.initializeApp(
+  //   name: 'db2',
+  //   options: Platform.isIOS || Platform.isMacOS
+  //       ? FirebaseOptions(
+  //           appId: '1:297855924061:ios:c6de2b69b03a5be8',
+  //           apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
+  //           projectId: 'flutter-firebase-plugins',
+  //           messagingSenderId: '297855924061',
+  //           databaseURL: 'https://flutterfire-cd2f7.firebaseio.com',
+  //         )
+  //       : FirebaseOptions(
+  //           appId: '1:957750199314:android:57dce63b233fe7463e44cb',
+  //           apiKey: 'AIzaSyAECA03oanodBO9gB3ZhKCk8b-bznl4nGw',
+  //           messagingSenderId: '957750199314',
+  //           projectId: 'taxiapp-d258c',
+  //           databaseURL: 'https://taxiapp-d258c-default-rtdb.firebaseio.com/',
+  //         ),
+  // );
   runApp(
     MyApp(),
   );
@@ -42,9 +49,15 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
-        // '/loginPage': (context) => LoginPage(),
-        // '/registrationPage': (context) => (),
+        '/': (context) => LandingPage(),
+        '/login-page': (context) => LoginPage(),
+        '/registration-page': (context) => RegistrationPage(),
+        '/tabs-screen': (context) => TabsScreen(),
+        '/mental-1': (context) => MentalTest(),
+        '/mental-2': (context) => MentalTestSecond(),
+        '/mental-3': (context) => MentalTestThird(),
+        '/mental-result': (context) => MentalResult(),
+        '/news-stories': (context) => NewsStoriesPage(),
       },
     );
   }

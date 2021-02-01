@@ -1,0 +1,17 @@
+Features to be added:
+
+1. student profile
+	a. Student ID
+	b. time table
+
+2. Daily Food/Cafe Menu
+3. Tuck Shop Prepaid order system(optional)
+4. Mental, Physical, Emotional & Psychic Tests.
+5. Daily News & Students Story(Single page)
+6. Mentor Chatting(Optional)
+
+Icons inside Tab Bar:
+1. For profile and related word
+2. For Home Screen. (News+Stories)
+3. Menu Cards
+4. Mentor Chatting
